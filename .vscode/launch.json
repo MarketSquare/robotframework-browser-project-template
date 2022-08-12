@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      // Config for launching using F5 key
+      {
+          "name": "Launch F5",
+          "type": "robotframework-lsp",
+          "request": "launch",
+          "cwd": "${workspaceFolder}",
+          "target": "Tests",
+          "terminal": "integrated",
+          "args": ["-A", "Start/arguments.txt", "-t", "${input:TestName}"],
+          "postDebugTask": "Report",
+          },
+      // Config for launching using links above tests
+      {
+          "name": "Robot Framework: Launch template",  // Do not change--VS Code deserves exactly this name
+          "type": "robotframework-lsp",
+          "request": "launch",
+          "cwd": "${workspaceFolder}",
+          "terminal": "integrated",
+          "args": ["-A", "Start/arguments.txt"],
+          "postDebugTask": "Report",
+      },
+  ],
+  "inputs":
+  [
+      {
+      "type": "pickString",
+      "id": "TestName",
+      "description": "Test to be run:",
+      "options": [
+        "TestCaseTitle",  // Change for the real test names
+        "TestCaseLink",
+      ],
+      "default": "TestCaseTitle",  // Default test
+    }
+  ]
+}

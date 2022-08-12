@@ -1,0 +1,15 @@
+[tool.robotidy]
+spacecount = 2
+indent = 4
+line_length = 140
+configure = [
+    "AlignSettingsSection: enabled = False",
+    "AlignVariablesSection: enabled = False",
+    "NormalizeAssignments: equal_sign_type = remove",
+    "NormalizeAssignments: equal_sign_type_variables = remove",
+    "NormalizeSeparators: sections = variables, keywords, testcases",
+    "NormalizeNewLines: section_lines = 1",
+    "OrderSettingsSection: imports_order = library, resource, variables",
+    "InlineIf: line_length = 140",
+    "NormalizeTags: normalize_case = False",
+]
